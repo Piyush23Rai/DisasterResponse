@@ -1,6 +1,6 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 
-#words to vectors transofrmation (word embeddings) using spacy library
+#words to vectors transformation (word embeddings) using spacy library
 class SpacyVectorTransformer(BaseEstimator, TransformerMixin):
     def __init__(self, nlp):
         self.nlp = nlp

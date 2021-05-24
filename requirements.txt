@@ -1,3 +1,9 @@
+pip install -U flask
+pip install -U sklearn
+pip install -U sqlalchemy
+pip install -U nltk
+pip install -U pickle
+pip install -U plotly
 pip install -U pip setuptools wheel
 pip install -U spacy
 pip install -U numpy
