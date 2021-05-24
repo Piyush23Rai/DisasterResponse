@@ -69,6 +69,11 @@ def clean_data(df):
     # dropping the original categories column from `df`
     df.drop(['categories'],axis=1, inplace=True)
     
+    #dropping columns which only have only 1 unique value
+    nunique = df.apply(pd.Series.nunique)
+    cols_to_drop = nunique[nunique == 1].index
+    df.drop(cols_to_drop, axis=1, inplace=True)
+    
     # drop duplicates
     df.drop_duplicates(subset=df.columns, inplace=True)
     
