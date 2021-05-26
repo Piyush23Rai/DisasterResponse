@@ -17,7 +17,7 @@ The project is about developing an NLP model to classify disaster response messa
 
 1. The cleaned data is saved in sqllite database and then retrieved using sqlalchemy library for training model
 
-2. NLP model is created involving all important steps (Tokenizing, Lemmatizing, Normalizing) of transfroming messages. CountVectorizer, TFIDF Transformer and a custom transformer (Spacy) making use of word embeddings have been used for transformation which is then finally trained using a RandomForestClassifier.
+2. NLP model is created involving all important steps (Tokenizing, Lemmatizing, Normalizing) of transfroming messages. CountVectorizer, TFIDF Transformer and a custom transformer (Spacy) making use of word embeddings have been used for transformation which is then finally trained using a RandomForestClassifier. Also, GridSearchCV is used for parameter tuning.
 
 3. A simple Dashboard is made using Flask where the user will enter the message which will then use the NLP model to classify it into listed categories. Along with it Distribution of Messages is created using plotly which is displayed on Dashboard.
 

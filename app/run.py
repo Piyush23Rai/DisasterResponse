@@ -8,6 +8,7 @@ nltk.download(['punkt', 'wordnet', 'stopwords'])
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from sklearn.model_selection import GridSearchCV
 
 from flask import Flask
 from flask import render_template, request, jsonify
