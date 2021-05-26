@@ -1,25 +1,49 @@
-
+﻿
 ### Table of Contents
 
 1. [Installation](#installation)
 2. [Project Description](#description)
-3. [Instructions](#Instructions)
-4. [Results](#results)
-5. [Licensing, Authors, and Acknowledgements](#licensing)
+3. [Files in the Repository](#files)
+4. [Instructions](#Instructions)
+5. [Results](#results)
+6. [Licensing, Authors, and Acknowledgements](#licensing)
 
 ## Installation <a name="installation"></a>
 
 The list of commands required to install necessary libraries are given in requirements.txt file.  The code should run with no issues using Python versions 3.*. 
 
-## Project Description<a name="motivation"></a>
+## Project Description<a name="description"></a>
 
 The project is about developing an NLP model to classify disaster response messages into 36 categories using a supervised learning.
 
 1. The cleaned data is saved in sqllite database and then retrieved using sqlalchemy library for training model
 
-2. NLP model is created involving all important steps (Tokenizing, Lemmatizing, Normalizing) of transfroming messages. CountVectorizer, TFIDF Transformer and a custom transformer (Spacy) making use of word embeddings have been used for transformation which is then finally trained using a RandomForestClassifier. Also, GridSearchCV is used for parameter tuning.
+2. NLP model is created involving all important steps (Tokenizing, Lemmatizing, Normalizing) of transfroming messages. CountVectorizer, TFIDF Transformer and a custom transformer (Spacy) making use of word embeddings have been used for transformation which is then finally trained using a RandomForestClassifier.
 
 3. A simple Dashboard is made using Flask where the user will enter the message which will then use the NLP model to classify it into listed categories. Along with it Distribution of Messages is created using plotly which is displayed on Dashboard.
+
+4. The Application has a great utility in the sense that it can classify messages in real time using the application which can further be directed to the appropriate team.
+
+## Files in the Repository<a name="files"></a>
+
+    • app
+	| - template
+	| |- master.html # main page of web app
+	| |- go.html # classification result page of web app
+	|- run.py # Flask file that runs app
+	|- data_visualiation.py #file that builds and saves plotly visualizations
+	|- custom_transformer.py #file that has custom transformer (word embeddings) that further used in feature union while building pipeline
+    • data
+	|- disaster_categories.csv # data to process
+	|- disaster_messages.csv # data to process
+	|- process_data.py # file that builds ETL pipeline that reads and cleans and saves data into database
+	|- DisasterResponse.db # database to save clean data to
+    • models
+	|- train_classifier.py #file that builds Machine Learning pipeline to train model
+	|- classifier.pkl # saved model
+	|- custom_transformer.py #file that has custom transformer (word embeddings) that further used in feature union while building pipeline
+    • requirements.txt #file that contains list of pre-requisite libraries to be installed
+    • README.md
 
 
 ## Instructions <a name="Instructions"></a>
@@ -48,8 +72,7 @@ The entire project in partial fulfilment towards completing Udacity's Data Scien
 
 The videos and lectures guided me to sucessfully build ETL and NLP pipelines.
 
-The idea of custom transformer that uses word embedding as a Feature and Dimensionality Reduction using
-TruncatedeSVD library is taken from below link - 
+The idea of custom transformer that uses word embedding as a Feature is taken from below link
 https://towardsdatascience.com/the-triune-pipeline-for-three-major-transformers-in-nlp-18c14e20530
 
 
